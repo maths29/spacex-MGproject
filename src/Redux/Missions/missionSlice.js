@@ -6,10 +6,11 @@ const API_DATA = 'https://api.spacexdata.com/v3/missions';
 export const displayMissions = createAsyncThunk('missions', async () => {
   try {
     const retrievedMissions = await axios.get(API_DATA);
-    const missionsDisplay = retrievedMissions.data.map((mission) => ({
+    const missionsDisplay = retrievedMissions.data.map((mission, index) => ({
       mission_id: mission.mission_id,
       mission_name: mission.mission_name,
       description: mission.description,
+      itemNumber: index + 1,
     }));
     return missionsDisplay;
   } catch (error) {

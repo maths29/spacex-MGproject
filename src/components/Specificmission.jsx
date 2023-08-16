@@ -9,7 +9,7 @@ const Specificmission = ({ mission }) => {
   const dispatch = useDispatch();
 
   const handleJoinMission = () => {
-    dispatch(joinButton(mission.itemNumber));
+    dispatch(joinButton(mission.mission_id));
   };
 
   return (

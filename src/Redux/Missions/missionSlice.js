@@ -29,7 +29,7 @@ const missionSlice = createSlice({
   reducers: {
     joinButton: (state, action) => {
       const joinedMissionId = action.payload;
-      state.missions = state.missions.map((mission) => (mission.itemNumber === joinedMissionId
+      state.missions = state.missions.map((mission) => (mission.mission_id === joinedMissionId
         ? { ...mission, reserved: true }
         : mission));
     },

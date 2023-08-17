@@ -59,6 +59,6 @@ const Mission = () => {
       </table>
     </div>
   );
-}
+};
 
-// export default Mission;
+export default Mission;

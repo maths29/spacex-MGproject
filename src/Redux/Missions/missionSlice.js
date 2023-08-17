@@ -11,7 +11,7 @@ export const displayMissions = createAsyncThunk('missions', async () => {
       mission_name: mission.mission_name,
       description: mission.description,
       itemNumber: index + 1,
-      reserved: false, // Initialize reserved property
+      reserved: false,
     }));
     return missionsDisplay;
   } catch (error) {

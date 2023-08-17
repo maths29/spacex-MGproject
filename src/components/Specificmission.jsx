@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinButton } from '../Redux/Missions/missionSlice';
+import { joinButton, leaveButton } from '../Redux/Missions/missionSlice';
 
 const Specificmission = ({ mission }) => {
   const isOddRow = mission.itemNumber % 2 === 1;
@@ -9,8 +9,14 @@ const Specificmission = ({ mission }) => {
   const dispatch = useDispatch();
 
   const handleJoinMission = () => {
-    dispatch(joinButton(mission.mission_id));
+    if (mission && mission.reserved) {
+      dispatch(leaveButton(mission.mission_id));
+    } else {
+      dispatch(joinButton(mission.mission_id));
+    }
   };
+
+  const getButtonContent = (reserved) => (reserved ? 'Leave Mission' : 'Join Mission');
 
   return (
     <tr className={isOddRow ? 'bg-neutral-100' : ''}>
@@ -29,8 +35,13 @@ const Specificmission = ({ mission }) => {
       </td>
       <td className="w-1/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
         {isCommercialServices ? null : (
-          <button className="border border-slate-700 rounded-md px-4 py-4" type="button" onClick={handleJoinMission}>
-            Join Mission
+          <button
+            className={`border border-slate-700 rounded-md px-4 py-4 ${mission?.reserved ? 'leave-button' : 'join-button'
+            }`}
+            type="button"
+            onClick={handleJoinMission}
+          >
+            {getButtonContent(mission?.reserved)}
           </button>
         )}
       </td>

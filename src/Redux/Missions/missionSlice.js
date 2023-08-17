@@ -6,9 +6,11 @@ const API_DATA = 'https://api.spacexdata.com/v3/missions';
 export const displayMissions = createAsyncThunk('missions', async () => {
   try {
     const retrievedMissions = await axios.get(API_DATA);
-    const missionsDisplay = Object.keys(retrievedMissions.data).map((key) => ({
-      mission_id: key,
-      ...retrievedMissions.data[key][0],
+    const missionsDisplay = retrievedMissions.data.map((mission, index) => ({
+      mission_id: mission.mission_id,
+      mission_name: mission.mission_name,
+      description: mission.description,
+      itemNumber: index + 1,
     }));
     return missionsDisplay;
   } catch (error) {
@@ -25,9 +27,17 @@ const missionSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    availableMissions: (state, action) => {
-      const mission = action.payload;
-      state.missions = state.missions.filter((typeMission) => typeMission.mission_name === mission);
+    joinButton: (state, action) => {
+      const joinedMissionId = action.payload;
+      state.missions = state.missions.map((mission) => (mission.mission_id === joinedMissionId
+        ? { ...mission, reserved: true }
+        : mission));
+    },
+    leaveButton: (state, action) => {
+      const joinedMissionId = action.payload;
+      state.missions = state.missions.map((mission) => (mission.mission_id === joinedMissionId
+        ? { ...mission, reserved: false }
+        : mission));
     },
   },
   extraReducers: (builder) => {
@@ -44,5 +54,7 @@ const missionSlice = createSlice({
       });
   },
 });
+
+export const { joinButton, leaveButton } = missionSlice.actions;
 
 export default missionSlice.reducer;

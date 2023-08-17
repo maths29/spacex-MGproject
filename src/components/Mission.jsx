@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { displayMissions } from '../Redux/Missions/missionSlice';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { displayMissions } from '../Redux/Missions/missionSlice';
 
-const Mission = () => {
-  const dispatch = useDispatch();
+// const Mission = () => {
+//   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(displayMissions());
-  }, [dispatch]);
+//   useEffect(() => {
+//     dispatch(displayMissions());
+//   }, [dispatch]);
 
-  return (
-    <div>
-      Our Mission
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       Our Mission
+//     </div>
+//   );
+// };
 
-export default Mission;
+// export default Mission;

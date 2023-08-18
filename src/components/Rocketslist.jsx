@@ -16,13 +16,14 @@ const Rocketslist = ({ rockets }) => {
   };
 
   const switchApp = (reserved) => (reserved ? 'Cancel Reservation' : 'Book Rocket');
+  const badgeSwitch = (reserved) => (reserved ? 'Reserved' : '');
 
   return (
     <div className="test">
       <img className="img" src={rockets.images} alt="" />
       <div className="info">
         <h1>{rockets.name}</h1>
-        <p>{rockets.description}</p>
+        <span className="btn">{badgeSwitch(rockets?.reserved)}</span><p>{rockets.description}</p>
         <button className="btn" type="button" onClick={rocketBooking}>{switchApp(rockets?.reserved)}</button>
       </div>
     </div>

@@ -47,11 +47,11 @@ const missionSlice = createSlice({
         state.loading = 'pending';
       })
       .addCase(displayMissions.fulfilled, (state, action) => {
-        state.missions = action.payload.map((mission) => ({
-          ...mission,
+        state.missions = action.payload.map((rocket) => ({
+          ...rocket,
           reserved: false,
         }));
-        state.loading = 'Succeeded loading missions';
+        state.loading = 'Succeeded';
       })
       .addCase(displayMissions.rejected, (state) => {
         state.loading = 'failed load missions';

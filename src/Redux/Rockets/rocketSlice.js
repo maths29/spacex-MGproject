@@ -7,22 +7,40 @@ export const displayRockets = createAsyncThunk('rockets', async () => {
     const retrievedRockets = await axios.get(baseURL);
     const rocketsDisplay = retrievedRockets.data.map((roc) => ({
       id: roc.id,
-      name: roc.name,
-      type: roc.type,
-      flickr_images: roc.flickr_images,
+      name: roc.rocket_name,
+      type: roc.rocket_type,
+      description: roc.description,
+      images: roc.flickr_images,
+      reserved: false,
     }));
     return rocketsDisplay;
   } catch (error) {
     throw Error(error);
   }
 });
+
 const initialState = {
   rockets: [],
   loading: 'idle',
 };
+
 const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
+  reducers: {
+    bookRocket: (state, action) => {
+      const rocketId = action.payload;
+      state.rockets = state.rockets.map((rocket) => (rocket.id === rocketId
+        ? { ...rocket, reserved: true }
+        : rocket));
+    },
+    cancelRocket: (state, action) => {
+      const rocketId = action.payload;
+      state.rockets = state.rockets.map((rocket) => (rocket.id === rocketId
+        ? { ...rocket, reserved: false }
+        : rocket));
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(displayRockets.pending, (state) => {
@@ -37,4 +55,7 @@ const rocketSlice = createSlice({
       });
   },
 });
+
+export const { bookRocket, cancelRocket } = rocketSlice.actions;
+
 export default rocketSlice.reducer;

@@ -23,7 +23,8 @@ const Rocketslist = ({ rockets }) => {
       <img className="img" src={rockets.images} alt="" />
       <div className="info">
         <h1>{rockets.name}</h1>
-        <span className="btn">{badgeSwitch(rockets?.reserved)}</span><p>{rockets.description}</p>
+        <span className="btn">{badgeSwitch(rockets?.reserved)}</span>
+        <p>{rockets.description}</p>
         <button className="btn" type="button" onClick={rocketBooking}>{switchApp(rockets?.reserved)}</button>
       </div>
     </div>

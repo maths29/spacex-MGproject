@@ -7,9 +7,10 @@ export const displayRockets = createAsyncThunk('rockets', async () => {
     const retrievedRockets = await axios.get(baseURL);
     const rocketsDisplay = retrievedRockets.data.map((roc) => ({
       id: roc.id,
-      name: roc.name,
-      type: roc.type,
-      flickr_images: roc.flickr_images,
+      name: roc.rocket_name,
+      type: roc.rocket_type,
+      description: roc.description,
+      images: roc.flickr_images,
     }));
     return rocketsDisplay;
   } catch (error) {

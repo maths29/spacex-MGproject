@@ -17,7 +17,8 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.4",
     "web-vitals": "^2.1.4"
-  },
+  }
+  ,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -26,21 +27,22 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
+    "react-app",
       "react-app/jest"
     ]
-  },
+  }
+  ,
   "browserslist": {
     "production": [
-      ">0.2%",
+    ">0.2%",
       "not dead",
       "not op_mini all"
-    ],
+      ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+      ]
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",

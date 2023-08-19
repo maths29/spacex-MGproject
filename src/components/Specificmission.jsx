@@ -4,7 +4,6 @@ import { joinButton, leaveButton } from '../Redux/Missions/missionSlice';
 
 const Specificmission = ({ mission }) => {
   const isOddRow = mission.itemNumber % 2 === 1;
-  const isCommercialServices = mission.mission_name === 'Commercial Resupply Services';
 
   const dispatch = useDispatch();
 
@@ -30,22 +29,18 @@ const Specificmission = ({ mission }) => {
         {mission.description}
       </td>
       <td className="w-1/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
-        {isCommercialServices ? null : (
-          <div className={`text-white px-4 rounded-md ${badgeStyle(mission?.reserved)}`}>
-            {badgeSwitch(mission?.reserved)}
-          </div>
-        )}
+        <div className={`text-white px-4 rounded-md ${badgeStyle(mission?.reserved)}`}>
+          {badgeSwitch(mission?.reserved)}
+        </div>
       </td>
       <td className="w-1/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
-        {isCommercialServices ? null : (
-          <button
-            className={`border rounded-md px-4 py-4 ${buttonStyle(mission?.reserved)}`}
-            type="button"
-            onClick={handleJoinMission}
-          >
-            {buttonSwitch(mission?.reserved)}
-          </button>
-        )}
+        <button
+          className={`border rounded-md px-4 py-4 ${buttonStyle(mission?.reserved)}`}
+          type="button"
+          onClick={handleJoinMission}
+        >
+          {buttonSwitch(mission?.reserved)}
+        </button>
       </td>
     </tr>
   );

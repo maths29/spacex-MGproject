@@ -41,7 +41,7 @@ const Mission = () => {
               scope="col"
               className="border-r px-6 py-4 dark:border-neutral-500"
             >
-              &lsquo;
+              {' '}
             </th>
           </tr>
         </thead>

@@ -1,20 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayMissions } from '../Redux/Missions/missionSlice';
 import Specificmission from './Specificmission';
 
 const Mission = () => {
   const { missions } = useSelector((state) => state.missions);
-  const [misssionLoading, setMissionLoading] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(displayMissions());
-    setTimeout(() => {
-      setMissionLoading(false);
-    }, 2000);
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(displayMissions());
+    }
+  }, [dispatch, missions.length]);
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -48,17 +46,11 @@ const Mission = () => {
           </tr>
         </thead>
         <tbody>
-          {misssionLoading ? (
-            <tr>
-              <td>
-                <p>Loading...</p>
-              </td>
-            </tr>
-          ) : (
+          {
             missions.map((mission) => (
               <Specificmission key={mission.mission_id} mission={mission} />
             ))
-          )}
+          }
         </tbody>
       </table>
     </div>

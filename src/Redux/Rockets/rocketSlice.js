@@ -18,10 +18,12 @@ export const displayRockets = createAsyncThunk('rockets', async () => {
     throw Error(error);
   }
 });
+
 const initialState = {
   rockets: [],
   loading: 'idle',
 };
+
 const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
@@ -51,7 +53,9 @@ const rocketSlice = createSlice({
       .addCase(displayRockets.rejected, (state) => {
         state.loading = 'failed load missions';
       });
-  },
-});
+  
+
 export const { bookRocket, cancelRocket } = rocketSlice.actions;
+
+
 export default rocketSlice.reducer;

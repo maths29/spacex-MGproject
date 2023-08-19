@@ -16,7 +16,10 @@ const Specificmission = ({ mission }) => {
     }
   };
 
-  const getButtonContent = (reserved) => (reserved ? 'Leave Mission' : 'Join Mission');
+  const badgeSwitch = (reserved) => (reserved ? 'Active Member' : 'Not a Member');
+  const badgeStyle = (reserved) => (reserved ? 'bg-[#218bff]' : 'bg-[#6d757d]');
+  const buttonSwitch = (reserved) => (reserved ? 'Leave Mission' : 'Join Mission');
+  const buttonStyle = (reserved) => (reserved ? 'border-red-700 text-red-700' : 'border-slate-700');
 
   return (
     <tr className={isOddRow ? 'bg-neutral-100' : ''}>
@@ -28,20 +31,19 @@ const Specificmission = ({ mission }) => {
       </td>
       <td className="w-1/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
         {isCommercialServices ? null : (
-          <div className="bg-[#6d757d] text-white px-4 rounded-md">
-            Not A Member
+          <div className={`text-white px-4 rounded-md ${badgeStyle(mission?.reserved)}`}>
+            {badgeSwitch(mission?.reserved)}
           </div>
         )}
       </td>
       <td className="w-1/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
         {isCommercialServices ? null : (
           <button
-            className={`border border-slate-700 rounded-md px-4 py-4 ${mission?.reserved ? 'leave-button' : 'join-button'
-            }`}
+            className={`border rounded-md px-4 py-4 ${buttonStyle(mission?.reserved)}`}
             type="button"
             onClick={handleJoinMission}
           >
-            {getButtonContent(mission?.reserved)}
+            {buttonSwitch(mission?.reserved)}
           </button>
         )}
       </td>

@@ -11,6 +11,7 @@ export const displayMissions = createAsyncThunk('missions', async () => {
       mission_name: mission.mission_name,
       description: mission.description,
       itemNumber: index + 1,
+      reserved: false,
     }));
     return missionsDisplay;
   } catch (error) {
@@ -34,8 +35,8 @@ const missionSlice = createSlice({
         : mission));
     },
     leaveButton: (state, action) => {
-      const joinedMissionId = action.payload;
-      state.missions = state.missions.map((mission) => (mission.mission_id === joinedMissionId
+      const leftMissionId = action.payload;
+      state.missions = state.missions.map((mission) => (mission.mission_id === leftMissionId
         ? { ...mission, reserved: false }
         : mission));
     },
@@ -46,8 +47,11 @@ const missionSlice = createSlice({
         state.loading = 'pending';
       })
       .addCase(displayMissions.fulfilled, (state, action) => {
-        state.missions = action.payload;
-        state.loading = 'Succeeded loading missions';
+        state.missions = action.payload.map((rocket) => ({
+          ...rocket,
+          reserved: false,
+        }));
+        state.loading = 'Succeeded';
       })
       .addCase(displayMissions.rejected, (state) => {
         state.loading = 'failed load missions';

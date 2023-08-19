@@ -46,3 +46,16 @@
   border: 2px solid #e8e8e8;
   background: #4386bf;
 }
+
+.btnn {
+  list-style-type: none;
+  display: flex;
+  width: 65px;
+  padding: 0;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: #e8e8e8;
+  border: 2px solid #e8e8e8;
+  background: #4386bf;
+}

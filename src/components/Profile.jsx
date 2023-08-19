@@ -23,6 +23,7 @@ const Profile = () => {
             </tbody>
           </table>
         </div>
+
         <div>
           <h1 className="font-bold">Rockets</h1>
           <table className="table-fixed border dark:border-neutral-500 mt-4 mb-4">

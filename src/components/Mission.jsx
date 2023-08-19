@@ -49,7 +49,11 @@ const Mission = () => {
         </thead>
         <tbody>
           {misssionLoading ? (
-            <p>Loading...</p>
+            <tr>
+              <td>
+                <p>Loading...</p>
+              </td>
+            </tr>
           ) : (
             missions.map((mission) => (
               <Specificmission key={mission.mission_id} mission={mission} />

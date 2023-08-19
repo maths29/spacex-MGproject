@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions component renders correctly 1`] = `
+<div
+  className="max-w-6xl mx-auto"
+>
+  <table
+    className="table-fixed border dark:border-neutral-500 mt-4 mb-4"
+  >
+    <thead
+      className="border-b font-medium dark:border-neutral-500"
+    >
+      <tr>
+        <th
+          className="border-r px-6 py-4 dark:border-neutral-500"
+          scope="col"
+        >
+          Mission
+        </th>
+        <th
+          className="border-r px-6 py-4 dark:border-neutral-500"
+          scope="col"
+        >
+          Description
+        </th>
+        <th
+          className="border-r px-6 py-4 dark:border-neutral-500"
+          scope="col"
+        >
+          Status
+        </th>
+        <th
+          className="border-r px-6 py-4 dark:border-neutral-500"
+          scope="col"
+        >
+          ‘
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p>
+            Loading...
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

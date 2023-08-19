@@ -1,8 +1,6 @@
 import React from 'react';
 import '../styles/style.css';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { bookRocket, cancelRocket } from '../Redux/Rockets/rocketSlice';
 
 const Rocketslist = ({ rockets }) => (
   <div className="test">

@@ -53,9 +53,9 @@ const rocketSlice = createSlice({
       .addCase(displayRockets.rejected, (state) => {
         state.loading = 'failed load missions';
       });
-  
+  },
+});
 
 export const { bookRocket, cancelRocket } = rocketSlice.actions;
-
 
 export default rocketSlice.reducer;

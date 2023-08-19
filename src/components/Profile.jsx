@@ -24,8 +24,6 @@ const Profile = () => {
           </table>
         </div>
 
-
-
         <div>
           <h1 className="font-bold">Rockets</h1>
           <table className="table-fixed border dark:border-neutral-500 mt-4 mb-4">
@@ -33,7 +31,7 @@ const Profile = () => {
               {bookedRockets.map((rocket) => (
                 <tr key={rocket.id}>
                   <td className="w-3/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500">
-                    {rocket.name}  
+                    {rocket.name}
                   </td>
                 </tr>
               ))}

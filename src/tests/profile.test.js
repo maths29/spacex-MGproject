@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import Profile from '../components/Profile';
+
 const mockStore = configureStore([]);
 const initialState = {
   missions: {
@@ -22,7 +23,7 @@ const initialState = {
         id: '1',
         name: 'Falcon 2',
         description: 'It is a good flight to the space',
-        reserved: false
+        reserved: false,
       },
     ],
   },

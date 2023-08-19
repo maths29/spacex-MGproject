@@ -1,70 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Missions component renders correctly 1`] = `
-<div
-  className="rock"
->
-  <div
-    className="test"
-  >
-    <img
-      alt=""
-      className="img"
-    />
-    <div
-      className="info"
-    >
-      <h1>
-        Falcon 1
-      </h1>
-      <span
-        className="btn"
-      >
-        Reserved
-      </span>
-      <p>
-        It is the best film
-      </p>
-      <button
-        className="btn"
-        onClick={[Function]}
-        type="button"
-      >
-        Cancel Reservation
-      </button>
-    </div>
-  </div>
-  <div
-    className="test"
-  >
-    <img
-      alt=""
-      className="img"
-    />
-    <div
-      className="info"
-    >
-      <h1>
-        Mock Mission 2
-      </h1>
-      <span
-        className="btn"
-      />
-      <p>
-        It is the best film
-      </p>
-      <button
-        className="btn"
-        onClick={[Function]}
-        type="button"
-      >
-        Book Rocket
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Rockets component renders correctly 1`] = `
 <div
   className="rock"
@@ -83,7 +18,7 @@ exports[`Rockets component renders correctly 1`] = `
         Falcon 1
       </h1>
       <span
-        className="btn"
+        className="btnn"
       >
         Reserved
       </span>
@@ -113,7 +48,7 @@ exports[`Rockets component renders correctly 1`] = `
         Mock Mission 2
       </h1>
       <span
-        className="btn"
+        className="btnn"
       />
       <p>
         It is the best film

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The profile component renders i a good way 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-6xl mx-auto"
+  >
+    <div
+      class="flex gap-5"
+    >
+      <div>
+        <h1
+          class="font-bold"
+        >
+          Missions
+        </h1>
+        <table
+          class="table-fixed border dark:border-neutral-500 mt-4 mb-4"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="w-3/6 whitespace-wrap border-b border-r px-6 py-4 dark:border-neutral-500"
+              >
+                Mock Mission 1
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h1
+          class="font-bold"
+        >
+          Rockets
+        </h1>
+        <table
+          class="table-fixed border dark:border-neutral-500 mt-4 mb-4"
+        >
+          <tbody />
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

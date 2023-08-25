@@ -83,7 +83,7 @@ In this task, we have worked with the real live data from the SpaceX API. Our ta
 Install this project with:
 
 - Open your command prompt or terminal and run.
--  git clone https://github.com/Kanyorok/spacex-project.git
+-  git clone https://github.com/maths29/spacex-MGproject.git
 ```sh
   npm install
 ```
